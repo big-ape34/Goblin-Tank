@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyOrbiter : EnemyBase
 {
-    public float orbitRadius = 4f;
-    public float orbitSpeed = 90f;
+    public float orbitRadius;
+    public float orbitSpeed;
 
     float currentAngle;
 
