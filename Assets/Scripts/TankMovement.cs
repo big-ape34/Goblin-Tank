@@ -30,8 +30,11 @@ public class TankMovement : MonoBehaviour
         if (Keyboard.current.sKey.isPressed) moveInput = -1f;
 
         // A / D = rotate
-        if (Keyboard.current.aKey.isPressed) rotationInput = 1f;
-        if (Keyboard.current.dKey.isPressed) rotationInput = -1f;
+        if (Keyboard.current.dKey.isPressed) rotationInput = 1f;
+        if (Keyboard.current.aKey.isPressed) rotationInput = -1f;
+
+        if (Keyboard.current.shiftKey.isPressed) moveSpeed = 10f;
+        else moveSpeed = 5f;
 
         // Move
         Vector2 movement = transform.up * moveInput * moveSpeed;
