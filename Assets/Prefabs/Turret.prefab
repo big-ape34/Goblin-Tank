@@ -274,7 +274,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatController
   firePoint: {fileID: 3027115275497871835}
   missilePrefab: {fileID: 6519778585118460353, guid: 36425f6a262c8d547b71bbeb9b807cce, type: 3}
+  muzzleFlashSmokePrefab: {fileID: 6880499512204041435, guid: d5b48e00d26a21a4cbc467cd6b42d72e, type: 3}
   fireRate: 0.25
+  damage: 5
+  setReloadTime: 3
 --- !u!1 &4208723947569975298
 GameObject:
   m_ObjectHideFlags: 0
