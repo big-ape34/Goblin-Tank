@@ -11,9 +11,20 @@ public class Missile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
+    private float expiryTime = 10f;
+
     void Update()
     {
         transform.position += transform.up * speed * Time.deltaTime;
+
+        if(expiryTime > 0)
+        {
+            expiryTime -= Time.deltaTime;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
