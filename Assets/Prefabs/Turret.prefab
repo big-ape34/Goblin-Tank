@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretController
   _turret: {fileID: 3392928288474735612}
+  _tankBody: {fileID: 0}
 --- !u!114 &3179194807223779909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatController
   firePoint: {fileID: 3027115275497871835}
-  missilePrefab: {fileID: 5283596695246935492, guid: 36425f6a262c8d547b71bbeb9b807cce, type: 3}
+  missilePrefab: {fileID: 6519778585118460353, guid: 36425f6a262c8d547b71bbeb9b807cce, type: 3}
   fireRate: 0.25
 --- !u!1 &4208723947569975298
 GameObject:
