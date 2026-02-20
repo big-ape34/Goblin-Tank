@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class TankMovement : MonoBehaviour
 {
-
-    [SerializeField] private GameObject _tankBody;
     public float moveSpeed = 5f;
     public float rotationSpeed = 150f;
 
@@ -12,7 +10,7 @@ public class TankMovement : MonoBehaviour
 
     void Start()
     {
-        rb = _tankBody.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
