@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyOrbiter
   moveSpeed: 3
   maxHealth: 1
-  orbitRadius: 4
-  orbitSpeed: 90
+  orbitRadius: 10
+  orbitSpeed: 50
 --- !u!50 &-1294969067461668441
 Rigidbody2D:
   serializedVersion: 5

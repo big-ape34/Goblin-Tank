@@ -3,10 +3,10 @@ using UnityEngine;
 public abstract class EnemyBase : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public int maxHealth = 1;
+    public float maxHealth = 1f;
 
     protected Transform tankTransform;
-    private int currentHealth;
+    private float currentHealth;
 
     protected virtual void Start()
     {
@@ -17,7 +17,7 @@ public abstract class EnemyBase : MonoBehaviour
             tankTransform = tank.transform;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)

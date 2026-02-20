@@ -3,7 +3,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     public float speed = 10f;
-    public int damage = 1;
+    public float damage = 1f;
     public float lifetime = 5f;
 
     void Start()
@@ -18,14 +18,10 @@ public class Missile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Missile strikes and does " + damage + " damage!");
-        Destroy(gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("Missile strikes and does " + damage + " damage!");
+
             EnemyBase enemy = other.GetComponent<EnemyBase>();
             if (enemy != null)
                 enemy.TakeDamage(damage);
