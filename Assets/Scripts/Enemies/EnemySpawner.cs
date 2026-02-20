@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (tankTransform == null)
         {
-            GameObject tank = GameObject.FindGameObjectWithTag("Player");
+            GameObject tank = GameObject.FindGameObjectWithTag("Tank");
             if (tank != null)
                 tankTransform = tank.transform;
         }
