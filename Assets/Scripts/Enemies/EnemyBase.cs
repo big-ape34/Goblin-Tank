@@ -8,7 +8,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Start()
     {
-        GameObject tank = GameObject.FindGameObjectWithTag("Player");
+        GameObject tank = GameObject.FindGameObjectWithTag("Tank");
         if (tank != null)
             tankTransform = tank.transform;
     }
