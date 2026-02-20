@@ -9,6 +9,7 @@ public class CombatController : MonoBehaviour
 
     [Header("Settings")]
     public float fireRate = 0.25f;
+    public float damage = 5f;
 
     private float nextFireTime;
 
@@ -25,10 +26,18 @@ public class CombatController : MonoBehaviour
 
     void Fire()
     {
-        Instantiate(
+        // Spawn missile
+        GameObject missileInstance = Instantiate(
             missilePrefab,
             firePoint.position,
             firePoint.rotation
         );
+
+        // Set the damage on the missile
+        Missile missileScript = missileInstance.GetComponent<Missile>();
+        if (missileScript != null)
+        {
+            missileScript.damage = damage;
+        }
     }
 }
