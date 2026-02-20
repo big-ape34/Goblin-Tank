@@ -104,4 +104,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194011c8379874545a486c39f23866c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCharger
-  moveSpeed: 3
+  moveSpeed: 1.5

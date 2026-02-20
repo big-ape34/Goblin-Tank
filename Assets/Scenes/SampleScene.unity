@@ -388,7 +388,7 @@ MonoBehaviour:
   orbiterPrefab: {fileID: 8241871408211842705, guid: 46247ffa1fe7a4478a4e6e66298330a1, type: 3}
   spawnRadius: 10
   timeBetweenWaves: 8
-  chargersPerWave: 3
+  chargersPerWave: 2
   orbitersPerWave: 1
   tankTransform: {fileID: 0}
 --- !u!1001 &4950524024264828245
