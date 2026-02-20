@@ -4,11 +4,17 @@ using UnityEngine.InputSystem;
 public class TurretController : MonoBehaviour
 {
     [SerializeField] private GameObject _turret;
+    [SerializeField] private GameObject _tankBody;
 
     void Update()
     {
         if(_turret)
         {
+            if(_tankBody)
+            {
+                transform.position = _tankBody.transform.position;
+            }
+
             if (Mouse.current == null) return;
 
             Vector2 mouseScreen = Mouse.current.position.ReadValue();
