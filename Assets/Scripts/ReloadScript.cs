@@ -39,9 +39,4 @@ public class ReloadScript : MonoBehaviour
 
     }
 
-    public void Loaded()
-    {
-        
-    }
-
 }
