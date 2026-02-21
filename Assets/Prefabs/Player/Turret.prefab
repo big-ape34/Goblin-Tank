@@ -294,6 +294,7 @@ MonoBehaviour:
   explosionRadius: 10
   machineGunBulletPrefab: {fileID: 3886941965925597824, guid: 94fe7a71f1ff63f498a1cece90ea6814, type: 3}
   machineGunfireRate: 0.1
+  loaded: 1
   setReloadTime: 3
 --- !u!114 &4592610875360158749
 MonoBehaviour:

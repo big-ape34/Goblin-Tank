@@ -22,6 +22,8 @@ public class CombatController : MonoBehaviour
     [SerializeField] private float machineGunfireRate = 0.1f;
     private float nextFireTime;
 
+    public bool loaded = true;
+
     private float reloadTime;
     [SerializeField] private float setReloadTime;
 
@@ -35,9 +37,16 @@ public class CombatController : MonoBehaviour
         UpdateCursorAndDestination();
 
         // Main turret fire
-        if (Mouse.current.leftButton.wasPressedThisFrame && reloadTime <= 0)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            FireMissile();
+            if (loaded == true)
+            {
+                Debug.Log("loaded is true");
+                FireMissile();
+                loaded = false;
+            } 
+            else Debug.Log("loaded is false");          
+            
         }
 
         // Machine gun fire
@@ -118,4 +127,5 @@ public class CombatController : MonoBehaviour
     {
         GameObject bulletObj = Instantiate(machineGunBulletPrefab, firePoint_machineGun.position, firePoint_machineGun.rotation);
     }
+    
 }

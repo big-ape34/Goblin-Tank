@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 2657490736379344298}
   - component: {fileID: 6641347868402010351}
   - component: {fileID: 2771393827761265449}
+  - component: {fileID: 8119416793161346437}
   m_Layer: 0
   m_Name: Chamber
   m_TagString: Untagged
@@ -249,6 +250,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8119416793161346437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538157547756467918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec074b6a03a7a491f8979fcfce8a695c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventRelay
+  _turret: {fileID: 3392928288474735612, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
 --- !u!1 &2380803412137727049
 GameObject:
   m_ObjectHideFlags: 0
