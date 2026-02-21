@@ -1116,6 +1116,10 @@ PrefabInstance:
       propertyPath: cursorRadius
       value: 
       objectReference: {fileID: 2100496918}
+    - target: {fileID: 3179194807223779909, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
+      propertyPath: shootableLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3376236864446879161, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
