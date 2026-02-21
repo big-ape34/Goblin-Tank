@@ -768,6 +768,8 @@ GameObject:
   - component: {fileID: 2485471658352463713}
   - component: {fileID: -8378760222313550062}
   - component: {fileID: 4247391053880063037}
+  - component: {fileID: 3231587720885315951}
+  - component: {fileID: 2457476201043313638}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Tank
@@ -814,6 +816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TankMovement
   stalled: 0
   moveSpeed: 5
+  speedMultiplier: 1
   rotationSpeed: 150
 --- !u!50 &7249651264852110522
 Rigidbody2D:
@@ -943,6 +946,35 @@ MonoBehaviour:
   walkUpRight: {fileID: 3119304703053379827}
   walkDownLeft: {fileID: 5704900246696397429}
   walkDownRight: {fileID: 3997391242628542327}
+--- !u!114 &3231587720885315951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294074856334396358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4313856c542d4381bab2daf8a94a76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrapInventory
+  threshold: 40
+--- !u!114 &2457476201043313638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294074856334396358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198c3ed40c9394a29b7fb563fd14fc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoblinMode
+  duration: 8
+  speedMultiplier: 2
+  scrapDrainInterval: 0.5
+  scrapDrainAmount: 16
 --- !u!1 &5704900246696397429
 GameObject:
   m_ObjectHideFlags: 0

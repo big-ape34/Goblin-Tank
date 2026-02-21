@@ -10,10 +10,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invincibilityDuration = 1f;
 
     public float CurrentHealth { get; private set; }
-    public bool IsInvincible { get; private set; }
+    public bool IsInvincible => invincibilityTimer > 0f || externalInvincible;
     public bool IsDead { get; private set; }
 
     private float invincibilityTimer;
+    private bool externalInvincible;
     private InvincibilityFlash flash;
 
     void Awake()
@@ -24,13 +25,12 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (IsInvincible)
+        if (invincibilityTimer > 0f)
         {
             invincibilityTimer -= Time.deltaTime;
             if (invincibilityTimer <= 0f)
             {
-                IsInvincible = false;
-                if (flash != null)
+                if (!externalInvincible && flash != null)
                     flash.StopFlash();
             }
         }
@@ -56,9 +56,13 @@ public class PlayerHealth : MonoBehaviour
         }
 
         // Start invincibility frames
-        IsInvincible = true;
         invincibilityTimer = invincibilityDuration;
         if (flash != null)
             flash.StartFlash(invincibilityDuration);
+    }
+
+    public void SetExternalInvincible(bool value)
+    {
+        externalInvincible = value;
     }
 }
