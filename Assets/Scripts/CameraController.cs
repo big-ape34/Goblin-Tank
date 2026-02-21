@@ -10,6 +10,14 @@ public class CameraController : MonoBehaviour
     public Vector3 offset = new Vector3(0, 0, -10); // Usually -10 for 2D camera
 
     private Vector3 velocity = Vector3.zero;
+    private Camera cam;
+
+    const float WorldHalfSize = 100f;
+
+    void Awake()
+    {
+        cam = GetComponent<Camera>();
+    }
 
     void LateUpdate()
     {
@@ -19,6 +27,14 @@ public class CameraController : MonoBehaviour
         Vector3 targetPosition = target.position + offset;
 
         // Smoothly move the camera toward the target
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        Vector3 pos = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+
+        // Clamp so camera doesn't show beyond world walls
+        float halfHeight = cam.orthographicSize;
+        float halfWidth = halfHeight * cam.aspect;
+        pos.x = Mathf.Clamp(pos.x, -WorldHalfSize + halfWidth, WorldHalfSize - halfWidth);
+        pos.y = Mathf.Clamp(pos.y, -WorldHalfSize + halfHeight, WorldHalfSize - halfHeight);
+
+        transform.position = pos;
     }
 }

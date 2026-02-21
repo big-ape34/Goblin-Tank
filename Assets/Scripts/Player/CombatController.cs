@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,10 +18,7 @@ public class CombatController : MonoBehaviour
     [SerializeField] private float explosionRadius = 2f;
 
     [Header("Machine Gun Settings")]
-    [SerializeField] private float machineGunDamage = 5f;
-    [SerializeField] private float machineGunRange = 15f;
-    [SerializeField] private LayerMask shootableLayers;
-
+    [SerializeField] private GameObject machineGunBulletPrefab;
     [SerializeField] private float machineGunfireRate = 0.1f;
     private float nextFireTime;
 
@@ -30,41 +27,35 @@ public class CombatController : MonoBehaviour
 
     private Vector3 fireDestination; //used for where missile lands
 
-
-
     void Update()
     {
         if (Mouse.current == null) return;
 
-        //Main turret fire
-        if (
-            Mouse.current.leftButton.wasPressedThisFrame && 
-            reloadTime <= 0
-            )
+        // Update fireDestination and cursor radius
+        UpdateCursorAndDestination();
+
+        // Main turret fire
+        if (Mouse.current.leftButton.wasPressedThisFrame && reloadTime <= 0)
         {
-            Fire();
+            FireMissile();
         }
 
-        //machien gun fire
+        // Machine gun fire
         if (Mouse.current.rightButton.isPressed && Time.time >= nextFireTime)
         {
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time + machineGunfireRate;
             FireMachineGun();
         }
 
-        //Trigger reload
+        // Reload timer
         if (reloadTime > 0)
         {
             reloadTime -= Time.deltaTime;
         }
-
-        CursorRadiusHandler();
     }
 
-    void CursorRadiusHandler()
+    void UpdateCursorAndDestination()
     {
-        if (Mouse.current == null) return;
-
         Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
         mouseWorldPos.z = 0f;
@@ -77,11 +68,7 @@ public class CombatController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (!Application.isPlaying)
-            return;
-
-        if (Mouse.current == null)
-            return;
+        if (!Application.isPlaying || Mouse.current == null) return;
 
         Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
@@ -91,7 +78,7 @@ public class CombatController : MonoBehaviour
         Gizmos.DrawWireSphere(mouseWorldPos, explosionRadius);
     }
 
-    void Fire()
+    void FireMissile()
     {
         reloadTime = setReloadTime; //trigger reload time
 
@@ -102,7 +89,7 @@ public class CombatController : MonoBehaviour
             firePoint.rotation
         );
 
-        // Set the stats on the missile
+        // Set missile stats
         Missile missileScript = missileInstance.GetComponent<Missile>();
         if (missileScript != null)
         {
@@ -111,35 +98,16 @@ public class CombatController : MonoBehaviour
             missileScript.fireDestination = fireDestination;
         }
 
-        // Spawn the muzzle flash
+        // Spawn muzzle flash
         if (muzzleFlashSmokePrefab != null)
         {
             GameObject flash = Instantiate(muzzleFlashSmokePrefab, firePoint.position, firePoint.rotation);
-            Destroy(flash, 1.5f); // destroy after 0.5 seconds (so it doesn't linger)
+            Destroy(flash, 1.5f);
         }
     }
 
     void FireMachineGun()
     {
-        Vector2 origin = firePoint_machineGun.position;
-        Vector2 direction = firePoint_machineGun.right;
-
-        RaycastHit2D hit = Physics2D.Raycast(
-            origin,
-            direction,
-            machineGunRange,
-            shootableLayers
-        );
-
-        Debug.DrawRay(origin, direction * machineGunRange, Color.red, 0.1f);
-        Debug.Log("firing machien gun");
-        if (hit.collider != null)
-        {
-            EnemyBase enemy = hit.collider.GetComponent<EnemyBase>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(machineGunDamage);
-            }
-        }
+        GameObject bulletObj = Instantiate(machineGunBulletPrefab, firePoint_machineGun.position, firePoint_machineGun.rotation);
     }
 }

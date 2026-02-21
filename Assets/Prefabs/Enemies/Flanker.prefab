@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2914871251352844240}
   - component: {fileID: 3590011869183783348}
   - component: {fileID: -5759717646206991740}
+  - component: {fileID: 2204469581139275004}
   m_Layer: 6
   m_Name: Flanker
   m_TagString: Enemy
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5870096250732022598}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -151,7 +152,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -172,4 +173,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFlanker
   moveSpeed: 4
   maxHealth: 2
+  isAttacking: 0
   avoidAngle: 120
+--- !u!114 &2204469581139275004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870096250732022598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10cc9cd2eca1b4c7c8456f732826971d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlankerAttack
+  damage: 25
