@@ -106,7 +106,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf9b622dce03334a8168c7bc340f197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Missile
-  speed: 50
+  explosionParticlePrefab: {fileID: 316163790743892680, guid: c6183f0c0a5d39643b6c95ccdc11939c, type: 3}
+  particleSpawnCount: 20
+  fireDestination: {x: 0, y: 0, z: 0}
+  speed: 100
+  damage: 1
+  lifetime: 5
+  explosionRadius: 100
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &1859900758689906136
 Rigidbody2D:
   serializedVersion: 5
