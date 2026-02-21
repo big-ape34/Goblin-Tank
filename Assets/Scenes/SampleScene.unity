@@ -757,6 +757,11 @@ MonoBehaviour:
   flankersPerWave: 1
   flankerUnlockKills: 15
   tankTransform: {fileID: 1904975810}
+--- !u!1 &2022711112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3859795796627056605, guid: 7be412e2a7e2234408e508c857041a15, type: 3}
+  m_PrefabInstance: {fileID: 374849904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2026124041
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +793,7 @@ Transform:
   m_Children:
   - {fileID: 1904975810}
   - {fileID: 1349280576}
+  - {fileID: 374849905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2071569278
@@ -877,6 +883,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2026124042}
     m_Modifications:
+    - target: {fileID: 3469964003904665651, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469964003904665651, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4294074856334396358, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
       propertyPath: m_Name
       value: Tank
@@ -887,11 +901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7497455391927837357, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.63169
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7497455391927837357, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.90378004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7497455391927837357, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -925,15 +939,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2274634662550704839, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
-    - {fileID: 2158224728510441722, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
+    - target: {fileID: 7995495000043574081, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.184
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4294074856334396358, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1904975813}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
 --- !u!1001 &8084820146555486248
 PrefabInstance:
@@ -943,13 +956,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2026124042}
     m_Modifications:
+    - target: {fileID: 3179194807223779909, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
+      propertyPath: cursorRadius
+      value: 
+      objectReference: {fileID: 2022711112}
     - target: {fileID: 3376236864446879161, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.63169
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3376236864446879161, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.90378004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3376236864446879161, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
       propertyPath: m_LocalPosition.z
