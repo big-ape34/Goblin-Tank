@@ -2,15 +2,34 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
+    public static event System.Action OnEnemyKilled;
+
     public float moveSpeed = 3f;
+    public float maxHealth = 1f;
 
     protected Transform tankTransform;
+    private float currentHealth;
 
     protected virtual void Start()
     {
+        currentHealth = maxHealth;
+
         GameObject tank = GameObject.FindGameObjectWithTag("Tank");
         if (tank != null)
             tankTransform = tank.transform;
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    protected virtual void Die()
+    {
+        OnEnemyKilled?.Invoke();
+        Destroy(gameObject);
     }
 
     void Update()
