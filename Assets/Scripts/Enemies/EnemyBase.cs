@@ -34,10 +34,18 @@ public abstract class EnemyBase : MonoBehaviour
         Destroy(gameObject);
     }
 
+    const float WorldHalfSize = 100f;
+
     void Update()
     {
         if (tankTransform != null && !isAttacking)
             Move();
+
+        // Clamp within world bounds
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, -WorldHalfSize, WorldHalfSize);
+        pos.y = Mathf.Clamp(pos.y, -WorldHalfSize, WorldHalfSize);
+        transform.position = pos;
     }
 
     protected abstract void Move();
