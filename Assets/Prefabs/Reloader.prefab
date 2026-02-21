@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6815391442370086922}
+  - component: {fileID: 742676430800877924}
   m_Layer: 0
   m_Name: Reloader
   m_TagString: Untagged
@@ -34,6 +35,19 @@ Transform:
   - {fileID: 4752710412729223601}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742676430800877924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393681826426227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae283a0b437c46f1a7d8fefb7bd49cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowCamera
+  viewportOffset: {x: 0.85, y: 0.85}
 --- !u!1 &1376483039838531522
 GameObject:
   m_ObjectHideFlags: 0

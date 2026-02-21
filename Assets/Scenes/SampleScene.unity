@@ -2715,9 +2715,9 @@ MonoBehaviour:
   orbiterPrefab: {fileID: 8241871408211842705, guid: 46247ffa1fe7a4478a4e6e66298330a1, type: 3}
   flankerPrefab: {fileID: 5870096250732022598, guid: 4057772e4501f4447baf707753c66402, type: 3}
   timeBetweenWaves: 8
-  chargersPerWave: 2
-  orbitersPerWave: 0
-  flankersPerWave: 1
+  chargersPerWave: 3
+  orbitersPerWave: 1
+  flankersPerWave: 2
   flankerUnlockKills: 15
   tankTransform: {fileID: 1904975810}
   spawnBufferMin: 1
