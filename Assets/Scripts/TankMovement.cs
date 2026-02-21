@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class TankMovement : MonoBehaviour
 {
+
+    public bool stalled = false;
     public float moveSpeed = 5f;
     public float rotationSpeed = 150f;
 
@@ -25,16 +27,21 @@ public class TankMovement : MonoBehaviour
         float moveInput = 0f;
         float rotationInput = 0f;
 
-        // W / S = forward & backward
-        if (Keyboard.current.wKey.isPressed) moveInput = 1f;
-        if (Keyboard.current.sKey.isPressed) moveInput = -1f;
+        if (stalled == false)
+        {
+            // W / S = forward & backward
+            if (Keyboard.current.wKey.isPressed) moveInput = 1f;
+            if (Keyboard.current.sKey.isPressed) moveInput = -1f;
 
-        // A / D = rotate
-        if (Keyboard.current.dKey.isPressed) rotationInput = 1f;
-        if (Keyboard.current.aKey.isPressed) rotationInput = -1f;
+            // A / D = rotate
+            if (Keyboard.current.dKey.isPressed) rotationInput = 1f;
+            if (Keyboard.current.aKey.isPressed) rotationInput = -1f;
 
-        if (Keyboard.current.shiftKey.isPressed) moveSpeed = 10f;
-        else moveSpeed = 5f;
+            if (Keyboard.current.shiftKey.isPressed) moveSpeed = 10f;
+            else moveSpeed = 5f;
+        }
+
+        
 
         // Move
         Vector2 movement = transform.up * moveInput * moveSpeed;

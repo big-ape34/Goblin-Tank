@@ -6,6 +6,8 @@ public class TurretController : MonoBehaviour
     [SerializeField] private GameObject _turret;
     [SerializeField] private GameObject _tankBody;
 
+    public Vector2 AimDirection => _turret ? (Vector2)_turret.transform.up : Vector2.up;
+
     void Update()
     {
         if(_turret)

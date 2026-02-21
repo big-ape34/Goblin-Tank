@@ -4,13 +4,18 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject chargerPrefab;
     public GameObject orbiterPrefab;
+    public GameObject flankerPrefab;
     public float spawnRadius = 10f;
     public float timeBetweenWaves = 8f;
     public int chargersPerWave = 3;
     public int orbitersPerWave = 1;
+    public int flankersPerWave = 1;
+    public int flankerUnlockKills = 15;
     public Transform tankTransform;
 
     float waveTimer;
+    int totalKills;
+    bool flankersUnlocked;
 
     void Start()
     {
@@ -22,6 +27,23 @@ public class EnemySpawner : MonoBehaviour
         }
 
         SpawnWave();
+    }
+
+    void OnEnable()
+    {
+        EnemyBase.OnEnemyKilled += HandleEnemyKilled;
+    }
+
+    void OnDisable()
+    {
+        EnemyBase.OnEnemyKilled -= HandleEnemyKilled;
+    }
+
+    void HandleEnemyKilled()
+    {
+        totalKills++;
+        if (totalKills >= flankerUnlockKills)
+            flankersUnlocked = true;
     }
 
     void Update()
@@ -39,7 +61,8 @@ public class EnemySpawner : MonoBehaviour
         if (tankTransform == null)
             return;
 
-        int totalEnemies = chargersPerWave + orbitersPerWave;
+        int flankerCount = flankersUnlocked ? flankersPerWave : 0;
+        int totalEnemies = chargersPerWave + orbitersPerWave + flankerCount;
 
         for (int i = 0; i < totalEnemies; i++)
         {
@@ -50,7 +73,14 @@ public class EnemySpawner : MonoBehaviour
                 0f
             );
 
-            GameObject prefab = i < chargersPerWave ? chargerPrefab : orbiterPrefab;
+            GameObject prefab;
+            if (i < chargersPerWave)
+                prefab = chargerPrefab;
+            else if (i < chargersPerWave + orbitersPerWave)
+                prefab = orbiterPrefab;
+            else
+                prefab = flankerPrefab;
+
             if (prefab != null)
                 Instantiate(prefab, spawnPosition, Quaternion.identity);
         }
