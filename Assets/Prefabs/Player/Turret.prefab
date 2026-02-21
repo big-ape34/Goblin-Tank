@@ -291,7 +291,7 @@ MonoBehaviour:
   cursorRadius: {fileID: 3859795796627056605, guid: 7be412e2a7e2234408e508c857041a15, type: 3}
   fireRate: 0.25
   damage: 5
-  explosionRadius: 5
+  explosionRadius: 10
   machineGunBulletPrefab: {fileID: 3886941965925597824, guid: 94fe7a71f1ff63f498a1cece90ea6814, type: 3}
   machineGunfireRate: 0.1
   setReloadTime: 3

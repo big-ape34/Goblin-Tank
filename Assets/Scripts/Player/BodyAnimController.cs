@@ -16,6 +16,16 @@ public class BodyAnimController : MonoBehaviour
     private GameObject[] allDirections;
     private GameObject lastDirection;
 
+    void Start()
+    {
+        lastDirection = walkDown;   // choose your default
+        SetAllInvisible();
+        SetVisible(lastDirection);
+
+        var anim = lastDirection.GetComponent<Animator>();
+        if (anim != null)
+            anim.enabled = false; // idle/frozen at start
+    }
     void Awake()
     {
         allDirections = new GameObject[]

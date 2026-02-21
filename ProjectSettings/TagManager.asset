@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tank
   - Enemy
+  - ExplosionFire
   layers:
   - Default
   - TransparentFX
