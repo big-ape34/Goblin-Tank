@@ -110,7 +110,7 @@ MonoBehaviour:
   moveSpeed: 3
   maxHealth: 1
   isAttacking: 0
-  orbitRadius: 10
+  orbitRadius: 15
   orbitSpeed: 50
 --- !u!50 &-1294969067461668441
 Rigidbody2D:
