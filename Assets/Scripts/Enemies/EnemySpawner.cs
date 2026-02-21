@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
         PlayerHealth.OnPlayerDeath -= HandlePlayerDeath;
     }
 
-    void HandleEnemyKilled()
+    void HandleEnemyKilled(EnemyBase enemy)
     {
         TotalKills++;
         if (TotalKills >= flankerUnlockKills)

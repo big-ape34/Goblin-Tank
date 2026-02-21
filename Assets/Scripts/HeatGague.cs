@@ -16,6 +16,7 @@ public class HeatGague : MonoBehaviour
     public float stallLvl = 300; 
     //the maximum value the heat gague is capable of reaching
     public float maxHeat = 400;
+    [HideInInspector] public bool suspended = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +34,7 @@ public class HeatGague : MonoBehaviour
     // Update is called once per frame
     void HandleHeat()
     {
-        if (Keyboard.current == null) return;
+        if (Keyboard.current == null || suspended) return;
 
         boostHeat = 0f;
         //if you are boosting, the boost increment value is changed from 0 to 1.5

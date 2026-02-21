@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    public static event System.Action OnEnemyKilled;
+    public static event System.Action<EnemyBase> OnEnemyKilled;
 
     public float moveSpeed = 3f;
     public float maxHealth = 1f;
@@ -30,7 +30,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
-        OnEnemyKilled?.Invoke();
+        OnEnemyKilled?.Invoke(this);
         Destroy(gameObject);
     }
 
