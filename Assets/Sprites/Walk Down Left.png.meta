@@ -1,0 +1,327 @@
+fileFormatVersion: 2
+guid: acac52006fec466488c8a36e0bd5880d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4345308491996965723
+    second: Walk Down Left_0
+  - first:
+      213: -8388941629646640183
+    second: Walk Down Left_1
+  - first:
+      213: 161238016943066579
+    second: Walk Down Left_2
+  - first:
+      213: -3213531300727499167
+    second: Walk Down Left_3
+  - first:
+      213: 7988575140071945050
+    second: Walk Down Left_4
+  - first:
+      213: -1645237507540172205
+    second: Walk Down Left_5
+  - first:
+      213: -2672068896956303913
+    second: Walk Down Left_6
+  - first:
+      213: 1601723505088637611
+    second: Walk Down Left_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk Down Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3968
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5032938, y: 0.90843225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ba7f01d03ad4c30800000000000000
+      internalID: 4345308491996965723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_1
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 3968
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.89525706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cbec6bc80e749b80800000000000000
+      internalID: -8388941629646640183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_2
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 3968
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9018446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd0e244f15dc3200800000000000000
+      internalID: 161238016943066579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1984
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5032938, y: 0.92819524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166d989de4e3763d0800000000000000
+      internalID: -3213531300727499167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_4
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1984
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49341226, y: 0.9117262}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a53318db3ce1dde60800000000000000
+      internalID: 7988575140071945050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_5
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 1984
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49011844, y: 0.90513843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3524be72431fa29e0800000000000000
+      internalID: -1645237507540172205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49011856, y: 0.89196336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5bc85de77eaead0800000000000000
+      internalID: -2672068896956303913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Down Left_7
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 0
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.8952571}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baaa335aa077a3610800000000000000
+      internalID: 1601723505088637611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 07ccee0f2fadae241b1b6b4825cb27c7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":1984.0,"y":1984.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Walk Down Left_0: 4345308491996965723
+      Walk Down Left_1: -8388941629646640183
+      Walk Down Left_2: 161238016943066579
+      Walk Down Left_3: -3213531300727499167
+      Walk Down Left_4: 7988575140071945050
+      Walk Down Left_5: -1645237507540172205
+      Walk Down Left_6: -2672068896956303913
+      Walk Down Left_7: 1601723505088637611
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

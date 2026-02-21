@@ -24,31 +24,20 @@ public class TankMovement : MonoBehaviour
     {
         if (Keyboard.current == null) return;
 
-        float moveInput = 0f;
-        float rotationInput = 0f;
+        Vector2 moveDir = Vector2.zero;
 
-        if (stalled == false)
+        if (!stalled)
         {
-            // W / S = forward & backward
-            if (Keyboard.current.wKey.isPressed) moveInput = 1f;
-            if (Keyboard.current.sKey.isPressed) moveInput = -1f;
+            // WASD input
+            if (Keyboard.current.wKey.isPressed) moveDir.y += 1f;
+            if (Keyboard.current.sKey.isPressed) moveDir.y -= 1f;
+            if (Keyboard.current.dKey.isPressed) moveDir.x += 1f;
+            if (Keyboard.current.aKey.isPressed) moveDir.x -= 1f;
 
-            // A / D = rotate
-            if (Keyboard.current.dKey.isPressed) rotationInput = 1f;
-            if (Keyboard.current.aKey.isPressed) rotationInput = -1f;
-
-            if (Keyboard.current.shiftKey.isPressed) moveSpeed = 10f;
-            else moveSpeed = 5f;
+            moveDir.Normalize(); // prevents faster diagonal movement
+            moveSpeed = Keyboard.current.shiftKey.isPressed ? 10f : 5f;
         }
 
-        
-
-        // Move
-        Vector2 movement = transform.up * moveInput * moveSpeed;
-        rb.linearVelocity = movement;
-
-        // Rotate
-        float rotation = -rotationInput * rotationSpeed * Time.fixedDeltaTime;
-        rb.MoveRotation(rb.rotation + rotation);
+        rb.linearVelocity = moveDir * moveSpeed;
     }
 }

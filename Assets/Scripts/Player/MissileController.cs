@@ -95,8 +95,8 @@ public class Missile : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
-        }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }    
     }
 }
