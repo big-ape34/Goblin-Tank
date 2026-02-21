@@ -80,6 +80,14 @@ public class CombatController : MonoBehaviour
 
     void FireMissile()
     {
+        // Destroy all ExplosionFire(clone) objects
+        GameObject[] oldExplosions = GameObject.FindGameObjectsWithTag("ExplosionFire");
+
+        foreach (GameObject obj in oldExplosions)
+        {
+            Destroy(obj);
+        }
+
         reloadTime = setReloadTime; //trigger reload time
 
         // Spawn missile

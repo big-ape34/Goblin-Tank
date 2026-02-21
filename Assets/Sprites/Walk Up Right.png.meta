@@ -1,0 +1,327 @@
+fileFormatVersion: 2
+guid: a8a6657ff62fc25418a6da38f3200176
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8873223156361127658
+    second: Walk Up Right_0
+  - first:
+      213: -5641108950834794177
+    second: Walk Up Right_1
+  - first:
+      213: 5852735898753776594
+    second: Walk Up Right_2
+  - first:
+      213: -8078081430082771524
+    second: Walk Up Right_3
+  - first:
+      213: -5668783020838643164
+    second: Walk Up Right_4
+  - first:
+      213: 7141873519262937082
+    second: Walk Up Right_5
+  - first:
+      213: -1774844444553844429
+    second: Walk Up Right_6
+  - first:
+      213: -5572234747140643304
+    second: Walk Up Right_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk Up Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3968
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49341244, y: 0.9183138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6eca7c275042b70800000000000000
+      internalID: 8873223156361127658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_1
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 3968
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49341264, y: 0.9018446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31373e0c41c6b1b0800000000000000
+      internalID: -5641108950834794177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_2
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 3968
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.51317525, y: 0.9183138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db35617a48193150800000000000000
+      internalID: 5852735898753776594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1984
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49011868, y: 0.9216075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5ac352db3e4ef80800000000000000
+      internalID: -8078081430082771524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_4
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1984
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5032938, y: 0.9117262}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a952680ef6451b0800000000000000
+      internalID: -5668783020838643164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_5
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 1984
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5, y: 0.91501987}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affaf6260280d1360800000000000000
+      internalID: 7141873519262937082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.5032938, y: 0.9249014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339eac6916c7e57e0800000000000000
+      internalID: -1774844444553844429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Up Right_7
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 0
+        width: 1984
+        height: 1984
+      alignment: 9
+      pivot: {x: 0.49341264, y: 0.91831386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816e79b35027ba2b0800000000000000
+      internalID: -5572234747140643304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b33146b5d10d5284f9bec75f8c2a504e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":1984.0,"y":1984.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Walk Up Right_0: 8873223156361127658
+      Walk Up Right_1: -5641108950834794177
+      Walk Up Right_2: 5852735898753776594
+      Walk Up Right_3: -8078081430082771524
+      Walk Up Right_4: -5668783020838643164
+      Walk Up Right_5: 7141873519262937082
+      Walk Up Right_6: -1774844444553844429
+      Walk Up Right_7: -5572234747140643304
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
