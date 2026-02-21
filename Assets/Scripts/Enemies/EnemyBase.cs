@@ -7,6 +7,8 @@ public abstract class EnemyBase : MonoBehaviour
     public float moveSpeed = 3f;
     public float maxHealth = 1f;
 
+    [HideInInspector] public bool isAttacking = false;
+
     protected Transform tankTransform;
     private float currentHealth;
 
@@ -34,7 +36,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     void Update()
     {
-        if (tankTransform != null)
+        if (tankTransform != null && !isAttacking)
             Move();
     }
 

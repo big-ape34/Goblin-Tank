@@ -14,8 +14,9 @@ public class EnemySpawner : MonoBehaviour
     public Transform tankTransform;
 
     float waveTimer;
-    int totalKills;
+    public int TotalKills { get; private set; }
     bool flankersUnlocked;
+    bool spawningEnabled = true;
 
     void Start()
     {
@@ -32,22 +33,32 @@ public class EnemySpawner : MonoBehaviour
     void OnEnable()
     {
         EnemyBase.OnEnemyKilled += HandleEnemyKilled;
+        PlayerHealth.OnPlayerDeath += HandlePlayerDeath;
     }
 
     void OnDisable()
     {
         EnemyBase.OnEnemyKilled -= HandleEnemyKilled;
+        PlayerHealth.OnPlayerDeath -= HandlePlayerDeath;
     }
 
     void HandleEnemyKilled()
     {
-        totalKills++;
-        if (totalKills >= flankerUnlockKills)
+        TotalKills++;
+        if (TotalKills >= flankerUnlockKills)
             flankersUnlocked = true;
+    }
+
+    void HandlePlayerDeath()
+    {
+        spawningEnabled = false;
     }
 
     void Update()
     {
+        if (!spawningEnabled)
+            return;
+
         waveTimer += Time.deltaTime;
         if (waveTimer >= timeBetweenWaves)
         {

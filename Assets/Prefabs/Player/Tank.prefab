@@ -103,6 +103,9 @@ GameObject:
   - component: {fileID: 5854441409211907070}
   - component: {fileID: 7249651264852110522}
   - component: {fileID: 8681427639425565210}
+  - component: {fileID: 8978580589676624654}
+  - component: {fileID: 2485471658352463713}
+  - component: {fileID: -8378760222313550062}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Tank
@@ -186,3 +189,66 @@ MonoBehaviour:
   ventHeat: 5
   stallLvl: 300
   maxHeat: 400
+--- !u!114 &8978580589676624654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294074856334396358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998b81536311844418d8bd48de3391eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
+  invincibilityDuration: 1
+--- !u!114 &2485471658352463713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294074856334396358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ce3238a28404329bfaaeaca7b5222d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InvincibilityFlash
+--- !u!70 &-8378760222313550062
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294074856334396358}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.008800592, y: -0.019560393}
+  m_Size: {x: 1.9960766, y: 2.0823197}
+  m_Direction: 0
