@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class HeatGague : MonoBehaviour
 {
     //the base heat level
-    [SerializeField] private float heat = 0f;
+    public float heat = 0f;
     //the amount the heat cools down on its own
     public float coolOff = 0.25f;
     //the amount the heat is increased when you boost
