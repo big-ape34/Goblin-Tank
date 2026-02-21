@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
+    [SerializeField] private bool isBullet;
     [SerializeField] private GameObject explosionParticlePrefab;
     [SerializeField] private int particleSpawnCount = 10;
 
@@ -18,21 +19,34 @@ public class Missile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    private float expiryTime = 10f;
-
     void Update()
     {
-        transform.position = Vector3.MoveTowards(
-       transform.position,
-       fireDestination,
-       speed * Time.deltaTime
-   );
-
-        // Check if we've arrived
-        if (Vector3.Distance(transform.position, fireDestination) < 0.05f)
+        if (!isBullet)
         {
-            Explode();
+            transform.position = Vector3.MoveTowards(
+              transform.position,
+              fireDestination,
+              speed * Time.deltaTime
+           );
+
+            // Check if we've arrived
+            if (Vector3.Distance(transform.position, fireDestination) < 0.05f)
+            {
+                Explode();
+            }
+        } else
+        {
+            // Bullet logic (straight line in forward direction)
+            transform.position += transform.up * speed * Time.deltaTime; // new // use .right or .up depending on sprite
+
+            // Optional: destroy bullet after a certain distance or lifetime
+            lifetime -= Time.deltaTime;
+            if (lifetime <= 0f)
+            {
+                Destroy(gameObject);
+            }
         }
+       
     }
 
     void Explode()
@@ -70,31 +84,19 @@ public class Missile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Enemy"))
-    //    {
-    //        Vector2 explosionPoint = transform.position;
+    //Only for machine gun
+    void OnTriggerEnter2D(Collider2D hit)
+    {
+        if (hit.CompareTag("Enemy") && isBullet)
+        {
 
-    //        Debug.Log("Missile exploded!");
+            EnemyBase enemy = hit.GetComponent<EnemyBase>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
 
-    //        // Get everything in radius
-    //        Collider2D[] hits = Physics2D.OverlapCircleAll(
-    //            explosionPoint,
-    //            explosionRadius,
-    //            enemyLayer
-    //        );
-
-    //        foreach (Collider2D hit in hits)
-    //        {
-    //            EnemyBase enemy = hit.GetComponent<EnemyBase>();
-    //            if (enemy != null)
-    //            {
-    //                enemy.TakeDamage(damage);
-    //            }
-    //        }
-
-    //        Destroy(gameObject);
-    //    }
-    //}
+        Destroy(gameObject);
+    }
 }
