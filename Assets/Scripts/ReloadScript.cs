@@ -22,7 +22,7 @@ public class ReloadScript : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.downArrowKey.isPressed)
+        if (Keyboard.current.rKey.wasPressedThisFrame && tick == 1)
         {
             chamberAnimator.SetBool("IdleOpen", true);
             chamberAnimator.SetBool("IdleLoaded", false);
@@ -30,7 +30,7 @@ public class ReloadScript : MonoBehaviour
             tick = 2f;
             Debug.Log("tick is " + tick);
         } 
-        if (Keyboard.current.leftArrowKey.isPressed)
+        else if (Keyboard.current.rKey.wasPressedThisFrame && tick == 2)
         {
             chamberAnimator.SetBool("IdleOpen", false);
             chamberAnimator.SetBool("IdleLoaded", true);
@@ -38,7 +38,7 @@ public class ReloadScript : MonoBehaviour
             tick = 3f;
             Debug.Log("tick is " + tick);
         } 
-        if (Keyboard.current.upArrowKey.isPressed)
+        else if (Keyboard.current.rKey.wasPressedThisFrame && tick == 3)
         {
             chamberAnimator.SetBool("IdleOpen", false);
             chamberAnimator.SetBool("IdleLoaded", false);
