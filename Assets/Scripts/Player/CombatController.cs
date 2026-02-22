@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 public class CombatController : MonoBehaviour
 {
     [Header("References")]
+    public GameObject camera;
     public Transform firePoint;
     public Transform firePoint_machineGun;
+    public GameObject tankBody;
 
     public GameObject missilePrefab;
     public GameObject muzzleFlashSmokePrefab;
@@ -15,7 +17,7 @@ public class CombatController : MonoBehaviour
     [Header("Turret Settings")]
     public float fireRate = 0.25f;
     public float damage = 5f;
-    [SerializeField] private float explosionRadius = 2f;
+    [SerializeField] private float explosionRadius = 10f;
 
     [Header("Machine Gun Settings")]
     [SerializeField] private GameObject machineGunBulletPrefab;
@@ -37,6 +39,7 @@ public class CombatController : MonoBehaviour
         // Main turret fire
         if (Mouse.current.leftButton.wasPressedThisFrame && reloadTime <= 0)
         {
+            camera.GetComponent<CameraShake>().Shake(0.2f, 0.2f);
             FireMissile();
         }
 
@@ -44,6 +47,12 @@ public class CombatController : MonoBehaviour
         if (Mouse.current.rightButton.isPressed && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + machineGunfireRate;
+
+            if (tankBody.GetComponent<GoblinMode>().IsActive)
+            {
+                nextFireTime = Time.time + (machineGunfireRate / 2);//cut reload time in half;
+            }
+            //camera.GetComponent<CameraShake>().Shake(0.05f, 0.05f);
             FireMachineGun();
         }
 
@@ -51,6 +60,15 @@ public class CombatController : MonoBehaviour
         if (reloadTime > 0)
         {
             reloadTime -= Time.deltaTime;
+        }
+
+        if (tankBody.GetComponent<GoblinMode>().IsActive)
+        {
+            explosionRadius = 20f;
+        }
+        else
+        {
+           explosionRadius = 10f;
         }
     }
 
@@ -104,13 +122,14 @@ public class CombatController : MonoBehaviour
             missileScript.damage = damage;
             missileScript.explosionRadius = explosionRadius;
             missileScript.fireDestination = fireDestination;
+            missileScript.camera = camera;
         }
 
         // Spawn muzzle flash
         if (muzzleFlashSmokePrefab != null)
         {
             GameObject flash = Instantiate(muzzleFlashSmokePrefab, firePoint.position, firePoint.rotation);
-            Destroy(flash, 1.5f);
+            Destroy(flash, 7f);
         }
     }
 

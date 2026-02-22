@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
     private Camera cam;
+    private Vector3 shakeOffset;
 
     const float WorldHalfSize = 100f;
 
@@ -35,6 +36,11 @@ public class CameraController : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, -WorldHalfSize + halfWidth, WorldHalfSize - halfWidth);
         pos.y = Mathf.Clamp(pos.y, -WorldHalfSize + halfHeight, WorldHalfSize - halfHeight);
 
-        transform.position = pos;
+        transform.position = pos + shakeOffset;
+    }
+
+    public void SetShakeOffset(Vector3 offset)
+    {
+        shakeOffset = offset;
     }
 }

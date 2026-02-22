@@ -2,38 +2,58 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private GameObject healthBar;
+    private Vector3 originalBarScale;
+
     public static event System.Action OnPlayerDeath;
     public static event System.Action<float, float> OnHealthChanged;
     public static event System.Action OnDamageTaken;
 
-    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float maxHealth = 50f;
     [SerializeField] private float invincibilityDuration = 1f;
 
     public float CurrentHealth { get; private set; }
-    public bool IsInvincible { get; private set; }
+    public bool IsInvincible => invincibilityTimer > 0f || externalInvincible;
     public bool IsDead { get; private set; }
 
     private float invincibilityTimer;
+    private bool externalInvincible;
     private InvincibilityFlash flash;
+
+    private bool wasGoblinActive;
 
     void Awake()
     {
         CurrentHealth = maxHealth;
         flash = GetComponent<InvincibilityFlash>();
+
+        if (healthBar != null)
+            originalBarScale = healthBar.transform.localScale;
     }
 
     void Update()
     {
-        if (IsInvincible)
+        if (invincibilityTimer > 0f)
         {
             invincibilityTimer -= Time.deltaTime;
             if (invincibilityTimer <= 0f)
             {
-                IsInvincible = false;
-                if (flash != null)
+                if (!externalInvincible && flash != null)
                     flash.StopFlash();
             }
         }
+
+        //If goblin mode active, restore health and reset heat
+        bool isGoblinActive = GetComponent<GoblinMode>().IsActive;
+
+        if (isGoblinActive && !wasGoblinActive)
+        {
+            CurrentHealth = maxHealth;
+            UpdateHealthBar();
+            OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
+        }
+
+        wasGoblinActive = isGoblinActive;
     }
 
     public void TakeDamage(float amount)
@@ -46,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
             CurrentHealth = 0f;
 
         OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
+        UpdateHealthBar();
         OnDamageTaken?.Invoke();
 
         if (CurrentHealth <= 0f)
@@ -56,9 +77,25 @@ public class PlayerHealth : MonoBehaviour
         }
 
         // Start invincibility frames
-        IsInvincible = true;
         invincibilityTimer = invincibilityDuration;
         if (flash != null)
             flash.StartFlash(invincibilityDuration);
+    }
+
+    public void SetExternalInvincible(bool value)
+    {
+        externalInvincible = value;
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar == null) return;
+
+        float percent = CurrentHealth / maxHealth;
+
+        Vector3 newScale = originalBarScale;
+        newScale.x = originalBarScale.x * percent;
+
+        healthBar.transform.localScale = newScale;
     }
 }

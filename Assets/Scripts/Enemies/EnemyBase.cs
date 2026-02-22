@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    public static event System.Action OnEnemyKilled;
+    public static event System.Action<EnemyBase> OnEnemyKilled;
 
     public float moveSpeed = 3f;
     public float maxHealth = 1f;
@@ -30,7 +30,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
-        OnEnemyKilled?.Invoke();
+        OnEnemyKilled?.Invoke(this);
         Destroy(gameObject);
     }
 
@@ -56,7 +56,7 @@ public abstract class EnemyBase : MonoBehaviour
         if (direction != Vector3.zero)
         {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            //transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
 }
