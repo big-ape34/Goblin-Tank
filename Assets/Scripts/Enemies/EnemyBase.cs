@@ -56,7 +56,7 @@ public abstract class EnemyBase : MonoBehaviour
         if (direction != Vector3.zero)
         {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            //transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
 }

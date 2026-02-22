@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class CombatController : MonoBehaviour
 {
     [Header("References")]
+    public GameObject camera;
     public Transform firePoint;
     public Transform firePoint_machineGun;
 
@@ -37,6 +38,7 @@ public class CombatController : MonoBehaviour
         // Main turret fire
         if (Mouse.current.leftButton.wasPressedThisFrame && reloadTime <= 0)
         {
+            camera.GetComponent<CameraShake>().Shake(0.2f, 0.2f);
             FireMissile();
         }
 
@@ -44,6 +46,7 @@ public class CombatController : MonoBehaviour
         if (Mouse.current.rightButton.isPressed && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + machineGunfireRate;
+            //camera.GetComponent<CameraShake>().Shake(0.1f, 0.05f);
             FireMachineGun();
         }
 
@@ -104,13 +107,14 @@ public class CombatController : MonoBehaviour
             missileScript.damage = damage;
             missileScript.explosionRadius = explosionRadius;
             missileScript.fireDestination = fireDestination;
+            missileScript.camera = camera;
         }
 
         // Spawn muzzle flash
         if (muzzleFlashSmokePrefab != null)
         {
             GameObject flash = Instantiate(muzzleFlashSmokePrefab, firePoint.position, firePoint.rotation);
-            Destroy(flash, 1.5f);
+            Destroy(flash, 7f);
         }
     }
 

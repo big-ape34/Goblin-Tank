@@ -109,10 +109,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Missile
   isBullet: 0
   explosionParticlePrefab: {fileID: 316163790743892680, guid: c6183f0c0a5d39643b6c95ccdc11939c, type: 3}
-  particleSpawnCount: 40
+  particleSpawnCount: 120
   fireDestination: {x: 0, y: 0, z: 0}
   speed: 100
-  damage: 1
+  damage: 15
   lifetime: 5
   explosionRadius: 100
   enemyLayer:

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private GameObject healthBar;
+    private Vector3 originalBarScale;
+
     public static event System.Action OnPlayerDeath;
     public static event System.Action<float, float> OnHealthChanged;
     public static event System.Action OnDamageTaken;
@@ -21,6 +24,9 @@ public class PlayerHealth : MonoBehaviour
     {
         CurrentHealth = maxHealth;
         flash = GetComponent<InvincibilityFlash>();
+
+        if (healthBar != null)
+            originalBarScale = healthBar.transform.localScale;
     }
 
     void Update()
@@ -46,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
             CurrentHealth = 0f;
 
         OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
+        UpdateHealthBar();
         OnDamageTaken?.Invoke();
 
         if (CurrentHealth <= 0f)
@@ -64,5 +71,17 @@ public class PlayerHealth : MonoBehaviour
     public void SetExternalInvincible(bool value)
     {
         externalInvincible = value;
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar == null) return;
+
+        float percent = CurrentHealth / maxHealth;
+
+        Vector3 newScale = originalBarScale;
+        newScale.x = originalBarScale.x * percent;
+
+        healthBar.transform.localScale = newScale;
     }
 }

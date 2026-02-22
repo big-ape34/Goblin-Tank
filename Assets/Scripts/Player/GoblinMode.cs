@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GoblinMode : MonoBehaviour
 {
+    [SerializeField] private GameObject goblinModeEffect;
+
     public static event System.Action OnGoblinModeStarted;
     public static event System.Action OnGoblinModeEnded;
 
@@ -115,10 +117,15 @@ public class GoblinMode : MonoBehaviour
 
             if (scrapInventory != null)
                 scrapInventory.RemoveScrap(scrapDrainAmount);
+
+            //here??
+            goblinModeEffect.SetActive(true);
         }
 
         drainCoroutine = null;
         Deactivate();
+
+        goblinModeEffect.SetActive(false);
     }
 
     void HandlePlayerDeath()
@@ -133,5 +140,8 @@ public class GoblinMode : MonoBehaviour
         }
 
         Deactivate();
+        //here??
+        goblinModeEffect.SetActive(false);
+
     }
 }
