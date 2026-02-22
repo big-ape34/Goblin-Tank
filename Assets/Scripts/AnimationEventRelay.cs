@@ -16,6 +16,7 @@ public class AnimationEventRelay : MonoBehaviour
             if (script != null)
             {
                 script.loaded = true;
+                Debug.Log("loaded SHOULD be true");
             }
         }
     }
