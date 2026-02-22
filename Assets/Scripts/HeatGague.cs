@@ -18,11 +18,13 @@ public class HeatGague : MonoBehaviour
     public float maxHeat = 400;
     [HideInInspector] public bool suspended = false;
 
+    public GameObject steam;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        steam.SetActive(false);
     }
 
     void FixedUpdate()
@@ -44,7 +46,15 @@ public class HeatGague : MonoBehaviour
 
         heat = heat + boostHeat;
         //if you press x, you can vent heat by 5. this will be the actual diagetic input later
-        if (Keyboard.current.xKey. isPressed && heat >= 5) heat = heat - ventHeat;
+        if (Keyboard.current.xKey.isPressed && heat >= 5)
+        {
+            heat = heat - ventHeat;
+            steam.SetActive(true);
+        } else
+        {
+            steam.SetActive(false);
+        }
+
 
         //this makes sure heat cant go into the negative
         if (heat < 0) heat = 0f;

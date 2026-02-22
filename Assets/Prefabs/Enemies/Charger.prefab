@@ -706,9 +706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912c6f82b1f334bfaa89a9a9c35e0050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChargerAttack
-  damage: 30
-  fuseDuration: 3
-  explosionRadius: 2.5
+  damage: 25
+  fuseDuration: 2
+  explosionRadius: 4
   explosionPrefab: {fileID: 4272745302578352001, guid: a0a5afe46e74d44b29aecb1f65e9e08b, type: 3}
 --- !u!114 &4093671482939798911
 MonoBehaviour:

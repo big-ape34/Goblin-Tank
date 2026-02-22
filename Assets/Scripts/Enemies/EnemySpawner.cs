@@ -24,8 +24,12 @@ public class EnemySpawner : MonoBehaviour
     bool spawningEnabled = true;
     TurretController turretController;
 
+    public int waveCount;
+
     void Start()
     {
+        waveCount = 1;
+
         if (tankTransform == null)
         {
             GameObject tank = GameObject.FindGameObjectWithTag("Tank");
@@ -72,6 +76,7 @@ public class EnemySpawner : MonoBehaviour
         {
             waveTimer = 0f;
             SpawnWave();
+            waveCount++;
         }
     }
 

@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public static event System.Action<float, float> OnHealthChanged;
     public static event System.Action OnDamageTaken;
 
-    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float maxHealth = 50f;
     [SerializeField] private float invincibilityDuration = 1f;
 
     public float CurrentHealth { get; private set; }
@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     private float invincibilityTimer;
     private bool externalInvincible;
     private InvincibilityFlash flash;
+
+    private bool wasGoblinActive;
 
     void Awake()
     {
@@ -40,6 +42,18 @@ public class PlayerHealth : MonoBehaviour
                     flash.StopFlash();
             }
         }
+
+        //If goblin mode active, restore health and reset heat
+        bool isGoblinActive = GetComponent<GoblinMode>().IsActive;
+
+        if (isGoblinActive && !wasGoblinActive)
+        {
+            CurrentHealth = maxHealth;
+            UpdateHealthBar();
+            OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
+        }
+
+        wasGoblinActive = isGoblinActive;
     }
 
     public void TakeDamage(float amount)

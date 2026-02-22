@@ -27,14 +27,14 @@ public class ScrapUI : MonoBehaviour
     void UpdateText(int scrapCount)
     {
         if (scrapText != null && !goblinModeActive)
-            scrapText.text = "Scrap: " + scrapCount;
+            scrapText.text = "Scrap: " + scrapCount + "/16";
     }
 
     void ShowGoblinMode()
     {
         goblinModeActive = true;
         if (scrapText != null)
-            scrapText.text = "Goblin Mode!";
+            scrapText.text = "Goblin Mode active!";
     }
 
     void ShowGoblinModeEnded()
