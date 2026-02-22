@@ -2139,6 +2139,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2279,6 +2280,18 @@ MonoBehaviour:
   target: {fileID: 1904975810}
   smoothTime: 1
   offset: {x: 0, y: 0, z: -10}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd56b0a21d3df67499aa7ef5e9ff38d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &534551112
 GameObject:
   m_ObjectHideFlags: 0
@@ -41297,6 +41310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2026124042}
     m_Modifications:
+    - target: {fileID: 3179194807223779909, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 3179194807223779909, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
       propertyPath: cursorRadius
       value: 

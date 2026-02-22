@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
+    public GameObject camera;
+
     [SerializeField] private bool isBullet;
     [SerializeField] private GameObject explosionParticlePrefab;
     [SerializeField] private int particleSpawnCount = 10;
@@ -81,6 +83,7 @@ public class Missile : MonoBehaviour
             );
         }
 
+        camera.GetComponent<CameraShake>().Shake(1f, 0.6f);
         Destroy(gameObject);
     }
 
