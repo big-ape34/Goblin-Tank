@@ -863,7 +863,7 @@ MonoBehaviour:
   coolOff: 0.25
   boostHeat: 0
   ventHeat: 5
-  stallLvl: 300
+  stallLvl: 400
   maxHeat: 400
   suspended: 0
 --- !u!114 &8978580589676624654
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4313856c542d4381bab2daf8a94a76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrapInventory
-  threshold: 40
+  threshold: 15
 --- !u!114 &2457476201043313638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,10 +974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198c3ed40c9394a29b7fb563fd14fc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoblinMode
+  goblinModeEffect: {fileID: 5132351971270578025}
   duration: 8
   speedMultiplier: 2
   scrapDrainInterval: 0.5
-  scrapDrainAmount: 16
+  scrapDrainAmount: 1
 --- !u!1 &5132351971270578025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1148,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 30
       minScalar: 5
       maxCurve:
         serializedVersion: 2
