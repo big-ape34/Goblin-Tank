@@ -110,7 +110,7 @@ public class CombatController : MonoBehaviour
         if (muzzleFlashSmokePrefab != null)
         {
             GameObject flash = Instantiate(muzzleFlashSmokePrefab, firePoint.position, firePoint.rotation);
-            Destroy(flash, 1.5f);
+            Destroy(flash, 7f);
         }
     }
 
