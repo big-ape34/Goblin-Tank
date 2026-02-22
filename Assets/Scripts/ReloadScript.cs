@@ -27,16 +27,14 @@ public class ReloadScript : MonoBehaviour
     void Update()
     {
         
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+
+        if (Mouse.current.leftButton.wasPressedThisFrame && tick == 1 && readyFire == true)
         {
             readyFire = false;
-        }
-
-        if (Keyboard.current.rKey.wasPressedThisFrame && tick == 1 && readyFire == false)
-        {
             chamberAnimator.SetBool("IdleOpen", true);
             chamberAnimator.SetBool("IdleLoaded", false);
             chamberAnimator.SetBool("Idle", false);
+            Wait();
             tick = 2f;
             Debug.Log("tick is " + tick);
         } 
@@ -45,6 +43,7 @@ public class ReloadScript : MonoBehaviour
             chamberAnimator.SetBool("IdleOpen", false);
             chamberAnimator.SetBool("IdleLoaded", true);
             chamberAnimator.SetBool("Idle", false);
+            Wait();
             tick = 3f;
             Debug.Log("tick is " + tick);
         } 
@@ -53,10 +52,21 @@ public class ReloadScript : MonoBehaviour
             chamberAnimator.SetBool("IdleOpen", false);
             chamberAnimator.SetBool("IdleLoaded", false);
             chamberAnimator.SetBool("Idle", true);
+            Wait();
             tick = 1f;
             Debug.Log("tick is " + tick);
         }
 
     }
 
+    async void Wait()
+    {
+        if (tick == 1) await System.Threading.Tasks.Task.Delay(500);
+        if (tick == 2) await System.Threading.Tasks.Task.Delay(500);
+        if (tick == 3) await System.Threading.Tasks.Task.Delay(100);
+    }
+
+
 }
+
+
