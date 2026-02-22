@@ -1309,15 +1309,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -4126,7 +4126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904975807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dd2268860b61427bb8ebea7382c0f51, type: 3}
   m_Name: 
@@ -4138,6 +4138,7 @@ MonoBehaviour:
   stallLvl: 300
   maxHeat: 400
   suspended: 0
+  steam: {fileID: 0}
 --- !u!1 &2022696156
 GameObject:
   m_ObjectHideFlags: 0
@@ -41238,6 +41239,10 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4206155334660212752, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4247391053880063037, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
       propertyPath: torsoAnimController
       value: 
@@ -41294,6 +41299,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.184
       objectReference: {fileID: 0}
+    - target: {fileID: 8681427639425565210, guid: 0af20c71ed63b7d4da237d7ef4cb622f, type: 3}
+      propertyPath: stallLvl
+      value: 390
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41314,6 +41323,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 3179194807223779909, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
+      propertyPath: tankBody
+      value: 
+      objectReference: {fileID: 1904975807}
     - target: {fileID: 3179194807223779909, guid: d7cf55bc83791da4bb787e62274690d0, type: 3}
       propertyPath: cursorRadius
       value: 

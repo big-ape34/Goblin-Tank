@@ -8,6 +8,7 @@ public class CombatController : MonoBehaviour
     public GameObject camera;
     public Transform firePoint;
     public Transform firePoint_machineGun;
+    public GameObject tankBody;
 
     public GameObject missilePrefab;
     public GameObject muzzleFlashSmokePrefab;
@@ -16,7 +17,7 @@ public class CombatController : MonoBehaviour
     [Header("Turret Settings")]
     public float fireRate = 0.25f;
     public float damage = 5f;
-    [SerializeField] private float explosionRadius = 2f;
+    [SerializeField] private float explosionRadius = 10f;
 
     [Header("Machine Gun Settings")]
     [SerializeField] private GameObject machineGunBulletPrefab;
@@ -46,7 +47,12 @@ public class CombatController : MonoBehaviour
         if (Mouse.current.rightButton.isPressed && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + machineGunfireRate;
-            //camera.GetComponent<CameraShake>().Shake(0.1f, 0.05f);
+
+            if (tankBody.GetComponent<GoblinMode>().IsActive)
+            {
+                nextFireTime = Time.time + (machineGunfireRate / 2);//cut reload time in half;
+            }
+            camera.GetComponent<CameraShake>().Shake(0.05f, 0.05f);
             FireMachineGun();
         }
 
@@ -54,6 +60,15 @@ public class CombatController : MonoBehaviour
         if (reloadTime > 0)
         {
             reloadTime -= Time.deltaTime;
+        }
+
+        if (tankBody.GetComponent<GoblinMode>().IsActive)
+        {
+            explosionRadius = 20f;
+        }
+        else
+        {
+           explosionRadius = 10f;
         }
     }
 
