@@ -52,7 +52,7 @@ public class CombatController : MonoBehaviour
             {
                 nextFireTime = Time.time + (machineGunfireRate / 2);//cut reload time in half;
             }
-            camera.GetComponent<CameraShake>().Shake(0.05f, 0.05f);
+            //camera.GetComponent<CameraShake>().Shake(0.05f, 0.05f);
             FireMachineGun();
         }
 
