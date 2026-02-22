@@ -13,16 +13,26 @@ public class ReloadScript : MonoBehaviour
 
     private float tick = 1f;
 
+    public bool readyFire = true;
+
     void Start()
     {
         chamberAnimator = GetComponent<Animator>();
         tick = 1f;
         Debug.Log("tick is " + tick);
+
+        readyFire = true;
     }
 
     void Update()
     {
-        if (Keyboard.current.rKey.wasPressedThisFrame && tick == 1)
+        
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            readyFire = false;
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame && tick == 1 && readyFire == false)
         {
             chamberAnimator.SetBool("IdleOpen", true);
             chamberAnimator.SetBool("IdleLoaded", false);
@@ -30,7 +40,7 @@ public class ReloadScript : MonoBehaviour
             tick = 2f;
             Debug.Log("tick is " + tick);
         } 
-        else if (Keyboard.current.rKey.wasPressedThisFrame && tick == 2)
+        else if (Keyboard.current.rKey.wasPressedThisFrame && tick == 2 && readyFire == false)
         {
             chamberAnimator.SetBool("IdleOpen", false);
             chamberAnimator.SetBool("IdleLoaded", true);
@@ -38,7 +48,7 @@ public class ReloadScript : MonoBehaviour
             tick = 3f;
             Debug.Log("tick is " + tick);
         } 
-        else if (Keyboard.current.rKey.wasPressedThisFrame && tick == 3)
+        else if (Keyboard.current.rKey.wasPressedThisFrame && tick == 3 && readyFire == false)
         {
             chamberAnimator.SetBool("IdleOpen", false);
             chamberAnimator.SetBool("IdleLoaded", false);

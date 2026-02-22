@@ -13,9 +13,13 @@ public class AnimationEventRelay : MonoBehaviour
             // Get the script component from the dragged GameObject
             CombatController script = _turret.GetComponent<CombatController>();
 
+            
+            ReloadScript script2 = GetComponent<ReloadScript>();
+
             if (script != null)
             {
                 script.loaded = true;
+                script2.readyFire = true;
                 Debug.Log("loaded SHOULD be true");
             }
         }
